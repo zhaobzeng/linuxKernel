@@ -1,0 +1,17 @@
+宝华驱动讲解
+基于qemu 模拟的vexpress arm cortex-a9四核开发板
+
+linux 的块设备由两种访问方式:
+(1)dd命令 
+(2)在块设备上建立文件系统
+linux中针对NOR/NAND等提供了独立的内存技术设备（Memory Technology Device MTD）子系统，其上运行YAFFS2/JFFS2/UBIFS等具备擦除和负载均衡能力的文件系统
+
+虚拟机linux目录下的butild.sh 是其编译脚本
+extra 目录下的vexpress.img 是一张虚拟的sd卡,将作文根文件系统的存储介质，他能以loop 的形式被挂载（mount）
+例如：
+sudo mount -o loop,offset=$((2048 * 512))  extra/vexpress.img extra/img
+可以把vexpress.img 的根文件系统分区挂载到extra/img，这样我们可以在目标板的根文件系统中放置我们自己的东西
+
+linux/module.sh: 会自动编译内核模块并安装到vexpress.img 中
+
+运行extra/run-nolcd.sh 可以启动一个不含lcd的arm linux
