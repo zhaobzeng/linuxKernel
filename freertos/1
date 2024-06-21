@@ -28,3 +28,35 @@ FreeRTOS中拥有四种状态：运行态、就绪态、阻塞态、挂起态，
 就绪列表pxReadyTaskList[x],其中x地表任务优先级数值，对于硬件，x的取值为0~31
 阻塞列表 pxDelayTaskList
 挂起列表  xSuspendedTaskList
+
+
+FreeRtos 源码整体结构
+FreeRTOS： FreeRTOS 内核
+FreeRTOS-Plus:FreeRTOS组件，一般我们会选择使用第三方的组件
+tools:工具
+
+
+内核框架：
+demo:各种开发平台的demo例程
+source:移植所需的源码和头文件等
+portable:编译器相关文件
+memMang:内存管理相关，5这种内存管理的方法
+croutine.通用c文件，协程相关文件
+event_groups.c 事件相关文件
+list.c  列表相关文件
+queue.c 队列相关文件
+tasks.c 任务相关文件
+timers.c 软件定时相关文件
+stream_buffer.c流式缓冲区相关文件00
+
+
+二、if define 定义
+#if defined (versal) && !defined(ARMR5)
+#define GICv3
+#else
+#define GICv2
+#endif
+
+
+
+(1)如何快速锁定龙头股票
