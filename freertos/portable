@@ -1,0 +1,31 @@
+1、portable文件夹
+源码中该文件中包含了编译选项,有gcc keil  IAR 等编译IDE
+源码文件A53 文件夹中包含port.c 与 portmacro.h、 portASM.s 三个文件
+
+
+
+xilinx板卡中添加了port_asm_vector.S 文件 portZynq7000.c 两个文件
+
+atomic.h:原子锁实现
+timers.c 文件包含了软件定时器功能实现相关代码，软件定时器允许用户在特定时间间隔或周期性地执行任务和回调函数
+
+ typedef struct tmrTimerControl                  
+    {
+        const char * pcTimerName;                   /* 软件定时器名字*/
+        ListItem_t xTimerListItem;                  /* 软件定时器列表项*/ 链表
+        TickType_t xTimerPeriodInTicks;             /* 软件定时器的周期 */
+        void * pvTimerID;                           /* 软件定时器的ID*/
+        TimerCallbackFunction_t pxCallbackFunction; /* 软件定时器的回调函数  */
+        #if ( configUSE_TRACE_FACILITY == 1 )
+            UBaseType_t uxTimerNumber;              /* 软件定时器的编号，调试用 */
+        #endif
+        uint8_t ucStatus;                           /* 软件定时器的状态 */
+    } xTIMER;
+
+
+/*语法使用*/
+#if ( INCLUDE_vTaskDelete == 1 )
+
+    static void prvDeleteTCB( TCB_t * pxTCB ) PRIVILEGED_FUNCTION;
+
+#endif
