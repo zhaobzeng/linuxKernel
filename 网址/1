@@ -1,6 +1,25 @@
 https://algorithm-visualizer.org/
 
-https://blog.csdn.net/m0_52012606/article/details/121667290
+https://blog.csdn.net/m0_52012606/article/details/121667290,贴子中有关于时间复杂度的计算方法
 
 时间复杂度大小关系大致：o(1)<o(logn)<o(n)<o(nlogn)<o(n^2)<o(n^3)<...
 
+
+读取一列
+import csv
+
+#打开csv，如果不存在则创建
+with open('test.csv', 'r', newline='') as csvfile:
+    #writer=csv.writer(csvfile)
+    #writer.writerow(['123','345'])
+    
+    reader = csv.reader(csvfile)
+    next(reader)
+    data=list(reader)
+    column_index = 0 #指定要提取的列
+    column_data=[row[column_index] for row in data]
+    # for row in reader:
+    #     #访问列
+    #     readData = row[0]
+    #     print(readData)
+    print(column_data)

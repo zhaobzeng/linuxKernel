@@ -25,3 +25,10 @@ RPMsg-Lit 是远程处理器消息传递（RPMsg）协议的轻量级实现,RPMs
 └── virtqueue.c
 核心组件位于rpmsg_lite.c中,
 媒体访问层是在virtqueue.c 中实现的，它是与OpenAMP 实现共享的少数几个文件之一,该层主要定义了共享内存模型，内部定义了使用的组件
+
+
+typedef void (* TaskFunction_t)( void * );
+定义一个指向函数的指针T,其返回值为void类型,参数后面是(void*)
+
+FreeRTOS 中,队列是一种用于任务间通信的重要机制。队列可以用来在任务之间传递数据，实现数据的异步传输和共享
+xQeueuCreate  用于创建队列
