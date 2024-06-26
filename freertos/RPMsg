@@ -1,0 +1,27 @@
+RPMsg-Lit 是远程处理器消息传递（RPMsg）协议的轻量级实现,RPMsg 协议定义了标准化二进制接口，该接口用于在异构多个系统中的多个核之间进行通信
+与开放式非对称多处理器（OpenMP） 框架相比,RPMsg-Lite减少了代码大小,简化了API,并提高了模块性
+官方仓库为https://github.com/nxp-mcuxpres
+官方详细使用指南：：https://nxp-mcuxpresso.github.io
+├── common
+│  └── llist.c
+├── include
+│  ├── environment
+│  ├── llist.h
+│  ├── platform
+│  ├── rpmsg_compiler.h
+│  ├── rpmsg_default_config.h
+│  ├── rpmsg_env.h
+│  ├── rpmsg_lite.h
+│  ├── rpmsg_ns.h
+│  ├── rpmsg_queue.h
+│  ├── virtio_ring.h
+│  └── virtqueue.h
+├── rpmsg_lite
+│  ├── porting
+│  ├── rpmsg_lite.c
+│  ├── rpmsg_ns.c
+│  └── rpmsg_queue.c
+└── virtio
+└── virtqueue.c
+核心组件位于rpmsg_lite.c中,
+媒体访问层是在virtqueue.c 中实现的，它是与OpenAMP 实现共享的少数几个文件之一,该层主要定义了共享内存模型，内部定义了使用的组件
