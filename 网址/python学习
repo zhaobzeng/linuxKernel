@@ -95,3 +95,20 @@ df.loc[2] = [7, 8, 9]
 df.loc[3] = [test1, 8, 9]
 df.to_csv('test13.csv', header=True,index =False) 
 print("******over*******dddd***")
+
+
+一下为画图代码
+import matplotlib.pyplot as plt
+ 
+# 两组数据
+x1 = [1, 2, 3, 4, 5]
+y1 = [1, 2, 3, 4, 5]
+ 
+# 绘制第一组数据
+plt.plot(x1, y1, label='Group 1')
+  
+# 显示图例
+plt.legend()
+ 
+# 显示图表
+plt.show()
