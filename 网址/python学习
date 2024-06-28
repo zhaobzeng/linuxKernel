@@ -112,3 +112,28 @@ plt.legend()
  
 # 显示图表
 plt.show()
+
+
+
+曲线拟合公式
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+# 离散点集
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 5, 4, 5])
+ 
+# 使用最小二乘法进行线性拟合
+A = np.vander(x, 2)
+C = np.linalg.lstsq(A, y, rcond=None)[0]
+ 
+# 输出拟合的系数，即线性方程的斜率和截距
+print(f"拟合公式的系数：斜率={C[1]}, 截距={C[0]}")
+ 
+# 绘制原始数据点和拟合的线
+plt.plot(x, y, 'bo', label='Original Data')
+plt.plot(x, np.dot(A, C), 'r-', label='Fitted Line')
+plt.legend()
+plt.show()
