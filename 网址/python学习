@@ -1,0 +1,81 @@
+= 用于给变量赋值，赋值后,下一个交互提示符的位置不显示任何结果
+width=20
+如果变量未定义(即，未赋值),使用该变量会提示错误
+
+
+文本：
+除了数字python 还可以操作文本(由str类型表示,称为字符串，这包括字符),它们可以成对的单引号或双引号 来表示
+
+word = 'python' 进行索引 word[0]
+内置函数 len 返回字符串长度
+
+s='12313'
+len(s)
+
+x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+if x < 0:
+    x = 0
+    print('Negative changed to zero')
+elif x == 0:
+    print('Zero')
+elif x == 1:
+    print('Single')
+else:
+    print('More')
+
+
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+    print(w, len(w))
+
+cat 3
+window 6
+defenestrate 12
+
+
+for i in range(5):
+    print(i)
+
+
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+
+
+
+科学计算
+NumPy SciPy Matplotlib
+
+桌面软件
+PyQt PySide wxPython PyGTK 是python快速开发桌面应用程序的
+
+服务器软件
+Twisted
+
+
+
+python 文件导入
+from msg import *
+成功导入文件夹下的所有模块
+
+
+import pandas as pd
+ 
+test1 = 'rwrwrr'
+
+df = pd.DataFrame(index=[0, 1, 2], columns=['A', 'B', 'C'])
+df.loc[0] = ["nihao", "buhao", 3]
+df.loc[1] = [4, 5, 6]
+df.loc[2] = [7, 8, 9]
+df.loc[3] = [7, 8, 9]
+
+print(df)
+
+

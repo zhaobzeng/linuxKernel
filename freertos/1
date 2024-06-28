@@ -126,3 +126,18 @@ MIPI RX->ISPx_mi->sram->ISPx_hdr->sram->ISPx_b3dnr->sram->ISPx_dwr->sram->MIPI T
 支持物理内存保护PMP
 支持栈指针监控器
 支持可编程物理内存属性PPMA
+
+
+
+IPI 共提供11个channel,每个channel包含6个可供用户访问的寄存器，分成sender(TRIG/OBS) 和 receiver(ISR、IMR、IER、IDR)两组。
+
+例程：
+channel 8 向channel 2 发起中断请求; channel8 的master向其TRIG 寄存器的BIT9(对应channel2) 写入1，即向channel 2 的master发起中断请求。
+channel2 的master收到中断后,可查询ISR的状态位以确定中断来源
+
+IPI 系统中,除了channel3~6外，每个channel对应一组Message Buffer Agent,每组有8个Requester 和 8个responder,每个buffer 为32bytes,在中断过程中，
+可借助这些buffer，实现两个processor间的信息交互。
+
+
+APU 控制IPI-Channel0,RPU0 控制IPI-channe1
+APU 向器Resuester/message Buffer 填充信息后,触发channel 中断
