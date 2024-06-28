@@ -78,4 +78,20 @@ df.loc[3] = [7, 8, 9]
 
 print(df)
 
+13
 
+
+
+
+
+import pandas as pd
+ 
+test1 = 'rwrwrr'
+
+df = pd.DataFrame(index=[0, 1, 2], columns=['A', 'B', 'C'])
+df.loc[0] = ["nihao", "buhao", 3]
+df.loc[1] = [4, 5, 6]
+df.loc[2] = [7, 8, 9]
+df.loc[3] = [test1, 8, 9]
+df.to_csv('test13.csv', header=True,index =False) 
+print("******over*******dddd***")
