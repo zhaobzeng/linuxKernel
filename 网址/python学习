@@ -137,3 +137,10 @@ plt.plot(x, y, 'bo', label='Original Data')
 plt.plot(x, np.dot(A, C), 'r-', label='Fitted Line')
 plt.legend()
 plt.show()
+
+
+def 
+
+
+微信发送代码：
+https://www.cnblogs.com/xingxingnbsp/p/17446048.html
