@@ -25,3 +25,10 @@ with open('test.csv', 'r', newline='') as csvfile:
     #     readData = row[0]
     #     print(readData)
     print(column_data)
+
+
+    compare对比器
+    对比器很少用，因为一开就死
+
+    微信发送消息代码
+    https://blog.csdn.net/jacke121/article/details/138203453
